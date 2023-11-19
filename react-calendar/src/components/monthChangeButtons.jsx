@@ -4,8 +4,8 @@ export const MonthChangeButton = () => {
   const { increaseMonth, decreaseMonth } = useDateState()
   return(
     <div>
-      <button onClick={decreaseMonth}>{"<"}</button>
-      <button onClick={increaseMonth}>{">"}</button>
+      <button className='month-change-button' onClick={decreaseMonth}>{"  <  "}</button>
+      <button className='month-change-button' onClick={increaseMonth}>{"  >  "}</button>
     </div>
 
   )

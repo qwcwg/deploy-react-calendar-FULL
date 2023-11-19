@@ -5,9 +5,7 @@ import Modal from 'react-modal'
 import AddSchedule from './addSchedule'
 import { DeleteSchedule } from './deleteSchedule'
 import { Link } from 'react-router-dom'
-import dotenv from "dotenv";
-
-dotenv.config()
+import { IP_ADDRESS } from '../App'
 
 
 
@@ -20,7 +18,7 @@ const DayCell = () => {   // to make DayList
   useEffect(() => {
     const getScheduleData = async () => {
       try{
-        const res = await axios.get(`${process.env.SCHEDULE_API}schedule`)
+        const res = await axios.get(`http://${IP_ADDRESS}:8001/schedule`)
         // console.log(res)
         setSchedules(await res.data)
       } catch (err) {
@@ -127,6 +125,8 @@ const DayCell = () => {   // to make DayList
   // console.log(monthNum)
   // console.log(increasedMonth)
   // console.log(lastDayofBeforeMonth)
+  console.log(process.env.SCHEDULE_API)
+
 
 
   useEffect(() => { setdaysList(twoDigitFullDates) }, [monthNum])
@@ -144,7 +144,7 @@ const DayCell = () => {   // to make DayList
 
   const handleDelete = async (id) => {  // to delete schedule
     try {
-      await axios.delete(`${process.env.SCHEDULE_API}schedule/${id}`)
+      await axios.delete(`http://${IP_ADDRESS}:8001/schedule/${id}`)
       window.location.reload()
       modalToggle()
     } catch (err) {
@@ -184,7 +184,7 @@ const DayCell = () => {   // to make DayList
                 {schedules.map((schedule, i) => {              
                   if (schedule.schedule_date == `${yearNum}-${twoDigitBeforeMonth}-${day.date}`) {
                     return(
-                      <div> {schedule.title} </div>
+                      <p className='overflow'> {schedule.title} </p>
                     )
                   }
                 })}
@@ -202,7 +202,7 @@ const DayCell = () => {   // to make DayList
               {schedules.map((schedule, i) => {              
                 if (schedule.schedule_date == `${yearNum}-${twoDigitMonth}-${day.date}`) {
                   return(
-                    <div> {schedule.title} </div>
+                    <p className='overflow'> {schedule.title} </p>
                   )
                 }
               })}
@@ -221,7 +221,7 @@ const DayCell = () => {   // to make DayList
               {schedules.map((schedule, i) => {              
                 if (schedule.schedule_date == `${yearNum}-${twoDigitAfterMonth}-${day.date}`) {
                   return(
-                    <div> {schedule.title} </div>
+                    <p className='overflow'> {schedule.title} </p>
                   )
                 }
               })}

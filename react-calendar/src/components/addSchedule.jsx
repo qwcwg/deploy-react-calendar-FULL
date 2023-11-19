@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { LinkButtons } from './linkButtons'
 import axios from 'axios'
 import { redirect, useNavigate } from 'react-router-dom'
-import dotenv from "dotenv";
-
-dotenv.config()
+import { IP_ADDRESS } from '../App'
 
 
 const AddSchedule = () => { 
@@ -25,7 +23,7 @@ const AddSchedule = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
-      await axios.post(`${process.env.SCHEDULE_API}schedule`, scheduleData)
+      await axios.post(`http://${IP_ADDRESS}:8001/schedule`, scheduleData)
     } catch (error) {
       console.log(error)
     }

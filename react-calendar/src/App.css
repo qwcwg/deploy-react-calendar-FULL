@@ -5,9 +5,10 @@
 }
 
 .wrapper {
-  width: 350px;
+  width: 100%;
   border: 1px;
   border-style: solid;
+  max-width: 400px;
 }
 
 .weeks {
@@ -61,6 +62,7 @@ div .days {
   flex-basis: auto;
   font-size: 11px;
   font-weight: bold;
+  text-overflow: ellipsis;
 }
 
 .dayCell {
@@ -88,4 +90,15 @@ div .days {
 
 .add-class-container {
   width: 300px;
+}
+
+.overflow {
+  text-overflow: ellipsis;
+  white-space : nowrap;
+  overflow: hidden;
+  font-size: 10px;
+}
+
+.month-change-button {
+  padding: 10px;
 }

@@ -3,6 +3,7 @@ import { LinkButtons } from './linkButtons'
 import axios from 'axios'
 import { redirect, useLocation, useNavigate } from 'react-router-dom'
 import { Link } from "react-router-dom"
+import { IP_ADDRESS } from '../App'
 
 export const UpdateScheduel = () => { 
 
@@ -38,7 +39,7 @@ export const UpdateScheduel = () => {
   const handleUpdate = async (event) => {
     event.preventDefault()
     try {
-      await axios.put(`${process.env.SCHEDULE_API}schedule/${scheduleID}`, scheduleData)
+      await axios.put(`http://${IP_ADDRESS}:8001/schedule/${scheduleID}`, scheduleData)
       alert(`수정 완료!`)
       navigate('/')
     } catch (error) {
