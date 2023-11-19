@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 350px;
+  border: 1px;
+  border-style: solid;
+}
+
+.weeks {
+  border: 1px;  /*border for test */
+  border-style: solid;
+  border-color: rgb(0, 0, 0);
+}
+
+.calendar ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
+}
+
+.calendar li {
+  width: calc(100% / 7) 
+}
+
+
+div .days {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
+}
+
+.day-button {
+  /* background-color: #ffffff; */
+  width: calc(100% / 7);
+  height: 70px;
+  border: 1px;
+  border-style: solid;
+  border-color: rgb(0, 0, 0);
+  vertical-align: text-top;
+  /* text-align: center; 
+  line-height: 65px; */
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100px;
+
+}
+
+.date-text {
+  position: relative;
+  margin-top: 10%;
+  flex-basis: auto;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.dayCell {
+  flex-basis: auto;
+  text-align: center;
+}
+
+.left-sort-container {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+}
+
+.right-sort-container {
+  width: 50%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.link-buttons-container {
+  display: flex;
+  /* width: 500px; */
+
+}
+
+.add-class-container {
+  width: 300px;
+}
