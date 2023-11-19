@@ -5,6 +5,9 @@ import Modal from 'react-modal'
 import AddSchedule from './addSchedule'
 import { DeleteSchedule } from './deleteSchedule'
 import { Link } from 'react-router-dom'
+import dotenv from "dotenv";
+
+dotenv.config()
 
 
 
@@ -17,7 +20,7 @@ const DayCell = () => {   // to make DayList
   useEffect(() => {
     const getScheduleData = async () => {
       try{
-        const res = await axios.get('http://192.168.0.10:8001/schedule')
+        const res = await axios.get(`${process.env.SCHEDULE_API}schedule`)
         // console.log(res)
         setSchedules(await res.data)
       } catch (err) {
@@ -141,7 +144,7 @@ const DayCell = () => {   // to make DayList
 
   const handleDelete = async (id) => {  // to delete schedule
     try {
-      await axios.delete(`http://localhost:8001/schedule/${id}`)
+      await axios.delete(`${process.env.SCHEDULE_API}schedule/${id}`)
       window.location.reload()
       modalToggle()
     } catch (err) {

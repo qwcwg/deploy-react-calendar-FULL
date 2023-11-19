@@ -38,7 +38,7 @@ export const UpdateScheduel = () => {
   const handleUpdate = async (event) => {
     event.preventDefault()
     try {
-      await axios.put(`http://localhost:8001/schedule/${scheduleID}`, scheduleData)
+      await axios.put(`${process.env.SCHEDULE_API}schedule/${scheduleID}`, scheduleData)
       alert(`수정 완료!`)
       navigate('/')
     } catch (error) {

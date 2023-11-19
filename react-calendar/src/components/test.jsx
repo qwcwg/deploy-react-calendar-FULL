@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { LinkButtons } from './linkButtons'
 import axios from 'axios'
+import dotenv from "dotenv";
+
+dotenv.config()
 
 
 
