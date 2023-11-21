@@ -47,7 +47,7 @@ const AddSchedule = () => {
         <input type='date' placeholder='schedule Date' name='schedule_date' onChange={handleChange}/> 
         <br/>
 
-        <button type='submit' onClick={handleSubmit}>제출</button>
+        <button className='btn' type='submit' onClick={handleSubmit}>제출</button>
 
       </form>
     </div>

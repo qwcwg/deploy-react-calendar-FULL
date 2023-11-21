@@ -56,7 +56,7 @@ const MonthNum = () => {  // to get Month Number
   const { monthNum, yearNum, increaseNum } = useDateState()
   return( 
     <div className='month-num'>
-      {yearNum}   {monthNum}
+      {`${yearNum}년`}   {`${monthNum}월` }
     </div>
   )
 }

@@ -155,7 +155,7 @@ const DayCell = () => {   // to make DayList
   return (
     <div>
       <Modal isOpen={modalOpen} onRequestClose={() => {handleClick()}}>
-        <Link to='/test'><button>add schedule</button></Link>
+        <Link to='/test'><button className='btn'>add schedule</button></Link>
         <hr/>
         <hr/>
         {schedules.map((schedule, i) => {
@@ -164,8 +164,8 @@ const DayCell = () => {   // to make DayList
           <div>
             <h4>{schedule.title}</h4>
             <div>{schedule.content}</div>
-            <button onClick={() => {handleDelete(schedule.id)}}>delete</button>
-            <Link to= {`/update/${schedule.id}`}><button>update</button></Link> 
+            <button className='btn' onClick={() => {handleDelete(schedule.id)}}>delete</button>
+            <Link to= {`/update/${schedule.id}`}><button className='btn'>update</button></Link> 
             <hr/>
           </div>
           )
